@@ -1123,8 +1123,8 @@ html body .header:not(.scrolled) .desktop-nav a.active{background:rgba(255,255,2
 <a class="active" href="#home">Home</a>
 <a href="membership.html">Membership</a>
 <a href="#features">About</a>
-<a href="#gallery">Conferences &amp; Events</a>
-<a href="#stories">Our Community</a>
+<a href="#gallery">Conferences</a>
+<a href="#stories">Community</a>
 </nav>
 <div class="nav-actions">
 <button aria-label="Toggle dark mode" class="icon-btn" id="themeBtn">
@@ -1143,7 +1143,7 @@ html body .header:not(.scrolled) .desktop-nav a.active{background:rgba(255,255,2
 <a class="link" href="membership.html">Membership</a>
 <a class="link" href="#features">About</a>
 <a class="link" href="#path">Get involved</a>
-<a class="link" href="#stories">Our Community</a>
+<a class="link" href="#stories">Community</a>
 <a class="btn btn-primary" href="#join">Join CAMWS</a>
 </nav>
 <main id="home">
@@ -1425,7 +1425,7 @@ html body .header:not(.scrolled) .desktop-nav a.active{background:rgba(255,255,2
 </ul>
 </div>
 <div class="foot-cols">
-<div><h4>Explore</h4><a href="#features">About</a><a href="membership.html">Membership</a><a href="#gallery">Conferences &amp; Events</a></div>
+<div><h4>Explore</h4><a href="#features">About</a><a href="membership.html">Membership</a><a href="#gallery">Conferences</a></div>
 <div><h4>Scholarship</h4><a href="membership.html">Publications</a><a href="membership.html">Awards</a><a href="#features">Resources</a></div>
 <div><h4>Connect</h4><a href="https://camws.org/" rel="noopener noreferrer" target="_blank">Official Website</a><a href="mailto:camws@camws.org">Contact</a><a href="mailto:camws@camws.org">Email CAMWS</a></div>
 </div>
@@ -1735,6 +1735,134 @@ document.addEventListener('DOMContentLoaded', function () {
   background: #4b0f82 !important;
   border-color: #ffffff !important;
   box-shadow: 0 1px 6px rgba(25, 8, 40, .65) !important;
+}
+
+
+
+/* Keep the site header white and readable at the top of the page and after scrolling */
+html body .header,
+html body header.header,
+html body .site-header,
+html body header,
+html body .navbar,
+html body .main-header {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+html body .header::before,
+html body header.header::before,
+html body .site-header::before,
+html body header::before,
+html body .navbar::before,
+html body .main-header::before {
+  background: #ffffff !important;
+}
+/* Prevent transparent-at-top header states from overriding the white background */
+html body .header:not(.scrolled),
+html body header.header:not(.scrolled),
+html body .site-header:not(.scrolled),
+html body header:not(.scrolled),
+html body .navbar:not(.scrolled),
+html body .main-header:not(.scrolled) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+
+
+/* Homepage header: match the membership page's white-header appearance at all scroll positions */
+html body #header,
+html body #header.scrolled,
+html body #header:not(.scrolled) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 1px 0 rgba(49, 17, 75, 0.12) !important;
+}
+html body #header .brand-emblem,
+html body #header .brand-full,
+html body #header:not(.scrolled) .brand-emblem,
+html body #header:not(.scrolled) .brand-full {
+  filter: none !important;
+}
+html body #header .desktop-nav a,
+html body #header:not(.scrolled) .desktop-nav a,
+html body #header.scrolled .desktop-nav a {
+  color: #3d1268 !important;
+}
+html body #header .desktop-nav a:hover,
+html body #header:not(.scrolled) .desktop-nav a:hover,
+html body #header.scrolled .desktop-nav a:hover {
+  background: #f3eafa !important;
+  color: #2b084a !important;
+}
+html body #header .desktop-nav a.active,
+html body #header:not(.scrolled) .desktop-nav a.active,
+html body #header.scrolled .desktop-nav a.active {
+  background: #f0e7fb !important;
+  color: #3d1268 !important;
+  box-shadow: inset 0 0 0 1px rgba(75, 15, 130, 0.14) !important;
+}
+
+
+
+/* FINAL FIX: Homepage header must be solid white from first paint, just like Membership */
+html body header#header.header,
+html body header#header.header:not(.scrolled),
+html body header#header.header.scrolled {
+  background: #fff !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 1px 0 rgba(49, 17, 75, .12) !important;
+}
+html body header#header.header > .container {
+  background: #fff !important;
+  background-color: #fff !important;
+}
+html body header#header.header:not(.scrolled) .brand-emblem,
+html body header#header.header:not(.scrolled) .brand-full,
+html body header#header.header.scrolled .brand-emblem,
+html body header#header.header.scrolled .brand-full {
+  filter: none !important;
+}
+html body header#header.header:not(.scrolled) .desktop-nav a,
+html body header#header.header.scrolled .desktop-nav a {
+  color: #3d1268 !important;
+}
+html body header#header.header:not(.scrolled) .desktop-nav a:hover,
+html body header#header.header.scrolled .desktop-nav a:hover {
+  background: #f3eafa !important;
+  color: #2b084a !important;
+}
+html body header#header.header:not(.scrolled) .desktop-nav a.active,
+html body header#header.header.scrolled .desktop-nav a.active {
+  background: #f0e7fb !important;
+  color: #3d1268 !important;
+}
+
+
+
+/* Keep homepage header navigation labels on one line */
+html body header#header .desktop-nav,
+html body header#header nav,
+html body header#header .nav-links {
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+html body header#header .desktop-nav a,
+html body header#header nav a,
+html body header#header .nav-links a {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  flex-shrink: 0 !important;
 }
 
 </style>

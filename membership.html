@@ -1196,6 +1196,57 @@ html body footer .foot-word{
 html body footer .copy{margin:0!important;padding:20px 0!important;border-top:1px solid rgba(255,255,255,.16)!important;color:#cdbbe0!important;position:relative;z-index:1}
 html body footer .copy span{color:inherit!important}
 @media(max-width:760px){html body footer>.container{padding-bottom:84px!important}}
+
+
+/* Keep the site header white and readable at the top of the page and after scrolling */
+html body .header,
+html body header.header,
+html body .site-header,
+html body header,
+html body .navbar,
+html body .main-header {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+html body .header::before,
+html body header.header::before,
+html body .site-header::before,
+html body header::before,
+html body .navbar::before,
+html body .main-header::before {
+  background: #ffffff !important;
+}
+/* Prevent transparent-at-top header states from overriding the white background */
+html body .header:not(.scrolled),
+html body header.header:not(.scrolled),
+html body .site-header:not(.scrolled),
+html body header:not(.scrolled),
+html body .navbar:not(.scrolled),
+html body .main-header:not(.scrolled) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+
+
+/* Keep homepage header navigation labels on one line */
+html body header#header .desktop-nav,
+html body header#header nav,
+html body header#header .nav-links {
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+html body header#header .desktop-nav a,
+html body header#header nav a,
+html body header#header .nav-links a {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  flex-shrink: 0 !important;
+}
+
 </style>
 
 <link rel="icon" type="image/png" href="camws-favicon.png">
@@ -1214,8 +1265,8 @@ html body footer .copy span{color:inherit!important}
 <a href="index.html">Home</a>
 <a class="active" href="membership.html">Membership</a>
 <a href="index.html#features">About</a>
-<a href="index.html#gallery">Conferences &amp; Events</a>
-<a href="index.html#stories">Our Community</a>
+<a href="index.html#gallery">Conferences</a>
+<a href="index.html#stories">Community</a>
 </nav>
 <div class="nav-actions">
 <button aria-label="Toggle dark mode" class="icon-btn" id="themeBtn">
@@ -1235,7 +1286,7 @@ html body footer .copy span{color:inherit!important}
 <a class="link active" aria-current="page" href="membership.html">Membership</a>
 <a class="link" href="index.html#features">About</a>
 <a class="link" href="index.html#path">Get involved</a>
-<a class="link" href="index.html#stories">Our Community</a>
+<a class="link" href="index.html#stories">Community</a>
 <a class="btn btn-primary" href="#membership-options">Join CAMWS</a>
 </nav>
 
@@ -1297,7 +1348,7 @@ html body footer .copy span{color:inherit!important}
 </ul>
 </div>
 <div class="foot-cols">
-<div><h4>Explore</h4><a href="index.html#features">About</a><a href="membership.html">Membership</a><a href="index.html#gallery">Conferences &amp; Events</a></div>
+<div><h4>Explore</h4><a href="index.html#features">About</a><a href="membership.html">Membership</a><a href="index.html#gallery">Conferences</a></div>
 <div><h4>Scholarship</h4><a href="membership.html">Publications</a><a href="membership.html">Awards</a><a href="index.html#features">Resources</a></div>
 <div><h4>Connect</h4><a href="https://camws.org/" rel="noopener noreferrer" target="_blank">Official Website</a><a href="mailto:camws@camws.org">Contact</a><a href="mailto:camws@camws.org">Email CAMWS</a></div>
 </div>
