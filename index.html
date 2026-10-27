@@ -1046,6 +1046,39 @@ html body footer .copy span{color:inherit!important}
 <link rel="icon" type="image/png" href="camws-favicon.png">
 <link rel="apple-touch-icon" href="camws-favicon.png">
 
+<style id="camws-hero-full-width-image">
+/* Full-width hero: classical-columns photo under a purple colour tint; text switched to light colours */
+html body .hero{min-height:clamp(620px,88vh,820px);display:flex;align-items:center;padding-top:calc(var(--header-h) + 48px)!important;padding-bottom:72px!important;background:#2a0c45;isolation:isolate}
+html body .hero .container{display:block!important;width:100%;position:static!important;z-index:auto!important;padding-inline:0!important}
+html body .hero .hero-copy{max-width:660px;position:relative;z-index:2;margin-left:max(var(--gutter,20px),calc((100% - 1180px)/2 + var(--gutter,20px)));margin-right:var(--gutter,20px)}
+html body .hero .hero-visual{position:absolute!important;inset:0;z-index:0;min-height:0!important;display:block!important;overflow:hidden!important;pointer-events:none}
+html body .hero .visual-card{position:absolute!important;inset:0;width:100%!important;max-width:none!important;height:100%;aspect-ratio:auto!important;border-radius:0!important;box-shadow:none!important;transform:none!important;animation:none!important;background:#2a0c45}
+html body .hero .visual-card::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(95deg,rgba(38,10,64,.90) 0%,rgba(52,16,88,.60) 42%,rgba(75,15,130,.20) 74%,rgba(107,47,166,.40) 100%)}
+html body .hero .hero-img{opacity:1!important;object-position:center 45%}
+/* hero text colours */
+html body .hero h1{color:#fff!important;text-shadow:0 2px 24px rgba(20,4,36,.35)}
+html body .hero .grad-text{background:linear-gradient(90deg,#f0e2ff,#c9a2f5)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:transparent!important}
+html body .hero .hero-copy .lead{color:#f0e8f9!important}
+html body .hero .hero-pill{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.34)!important;color:#fff!important;backdrop-filter:blur(6px)}
+html body .hero .hero-pill .dot{background:#fff!important;color:#4b0f82!important}
+html body .hero .btn-primary{background:#fff!important;color:#3d1268!important;border:2px solid #fff!important;box-shadow:0 8px 24px rgba(20,4,36,.25)}
+html body .hero .btn-primary:hover{background:#f0e7fb!important}
+html body .hero .btn-ghost{background:rgba(255,255,255,.1)!important;color:#fff!important;border:2px solid rgba(255,255,255,.8)!important}
+html body .hero .btn-ghost:hover{background:#fff!important;color:#3d1268!important}
+html body .hero .trust small{color:#e6d9f3!important}
+html body .hero .trust b{color:#fff!important}
+html body .hero .avatars span{border-color:#3b1362!important}
+/* header sits on the dark hero until the page is scrolled */
+html body .header:not(.scrolled) .brand-emblem,html body .header:not(.scrolled) .brand-full{filter:brightness(0) invert(1)}
+html body .header:not(.scrolled) .desktop-nav a{color:#f0e8f9!important}
+html body .header:not(.scrolled) .desktop-nav a:hover{background:rgba(255,255,255,.12)!important;color:#fff!important}
+html body .header:not(.scrolled) .desktop-nav a.active{background:rgba(255,255,255,.18)!important;color:#fff!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+@media(max-width:959px){
+  html body .hero{min-height:0;padding-top:calc(var(--header-h) + 36px)!important;padding-bottom:56px!important}
+  html body .hero .visual-card::after{background:linear-gradient(180deg,rgba(38,10,64,.9),rgba(55,17,92,.86) 60%,rgba(75,15,130,.78))}
+}
+</style>
 </head>
 <body>
 <svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0"><defs>
@@ -1136,11 +1169,8 @@ html body footer .copy span{color:inherit!important}
 <div class="hero-visual reveal" style="--d:.2s">
 <div class="visual-card" id="tiltCard">
 <!-- Free photo (Picsum, Unsplash-sourced) blended into the gradient as a duotone -->
-<img alt="Scholarly books and a quiet academic library, evoking research and classical learning" class="hero-img" decoding="async" height="760" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&amp;fit=crop&amp;w=1100&amp;q=90" width="700"/>
+<img alt="Student holding books on a university campus, representing learning and scholarly community" class="hero-img" decoding="async" height="760" src="camws-homepage-hero.jpeg" width="700"/>
 </div>
-<div class="chip c1"><i><i aria-hidden="true" class="ph ph-medal icon-ph"></i></i><div>Member benefits<small>Scholarship &amp; teaching</small></div></div>
-<div class="chip c2"><i><i aria-hidden="true" class="ph ph-fire icon-ph"></i></i><div>Since 1905<small>Learn, teach, connect</small></div></div>
-<div class="chip c3"><i><i aria-hidden="true" class="ph ph-graduation-cap icon-ph"></i></i><div>Annual conference<small>Scholars from across the region</small></div></div>
 </div>
 </div>
 </section>
@@ -1661,4 +1691,12 @@ document.addEventListener('DOMContentLoaded', function () {
 .trust small{font-size:clamp(.92rem,1vw,1rem);line-height:1.45}
 .trust small b{font-size:1.16em;font-weight:800}
 @media(max-width:480px){.hero-visual .chip{font-size:.9rem;padding:10px 12px}.hero-visual .chip small{font-size:.78rem}.trust small{font-size:.9rem}}
+
+/* Reduce only the sparkle separators in the outlined Learn / Create / Grow / Repeat marquee below Conference & Events */
+.outline-marquee .outline-track > span > i.ph-sparkle {
+  font-size: 0.52em !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
 </style>
